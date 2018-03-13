@@ -5,7 +5,7 @@ import config
 item_types = {'head': 'Шлем', 'shoulder': 'Плечо', 'back': 'Плащ', 'neck': 'Шея', 'chest': 'Грудь', 'wrist': 'Наручи',
               'waist': 'Пояс', 'hands': 'Перчатки', 'shirt': 'Рубашка', 'legs': 'Штаны', 'feet': 'Боты',
               'finger1': 'Кольцо', 'finger2': 'Кольцо', 'trinket1': 'Аккс.', 'trinket2': 'Аккс.',
-              'mainHand': 'Пр. рука', 'offHand': 'Лев. рука'}
+              'mainHand': 'Пр. рука', 'offHand': 'Лев. рука', 'tabard': 'Накидка'}
 
 
 def get_char_items_info(char, realm):
@@ -28,6 +28,6 @@ def parse_char_items(char):
             item = items[i]
             message += u'\U000025CF' + '*' + item_types[i] + '*' + ': ' + item['name'] + '. ilvl: ' + \
                        str(item['itemLevel']) + '\n'
-    except Exception:
+    except Exception:\
         message = 'Что-то не так. Гоблины украли персонажа?'
     return message
