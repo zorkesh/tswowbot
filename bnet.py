@@ -7,6 +7,9 @@ item_types = {'head': 'Шлем', 'shoulder': 'Плечо', 'back': 'Плащ', 
               'finger1': 'Кольцо', 'finger2': 'Кольцо', 'trinket1': 'Аккс.', 'trinket2': 'Аккс.',
               'mainHand': 'Пр. рука', 'offHand': 'Лев. рука', 'tabard': 'Накидка'}
 
+classes = ['none', "Воин", "Паладин", "Охотник", "Разбойник", "Жрец", "Рыцарь смерти", "Шаман", "Маг", "Чернокнижник"
+           "Монах", "Друид", "Охотник на демонов"]
+
 
 def get_char_items_info(char, realm):
     payload ={'locale': 'ru_RU', 'fields': 'items', 'apikey': config.bnet_token}
@@ -21,6 +24,7 @@ def parse_char_items(char):
         items = char['items']
         av_ilvl = items.pop('averageItemLevel')
         eq_ilvl = items.pop('averageItemLevelEquipped')
+        message += '*' + char['name'] + ', ' + classes[char['class']]
         message += '*Средний уровень предметов:* ' + str(av_ilvl) + '\n'
         message += '*Экипированный уровень предметов:* ' + str(eq_ilvl) + '\n'
         message += '*Предметы:*' + '\n'
