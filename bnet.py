@@ -24,7 +24,7 @@ def parse_char_items(char):
         items = char['items']
         av_ilvl = items.pop('averageItemLevel')
         eq_ilvl = items.pop('averageItemLevelEquipped')
-        message += '*' + char['name'] + ', ' + classes[char['class']]
+        message += '*' + char['name'] + ',* ' + classes[char['class']]
         message += '*Средний уровень предметов:* ' + str(av_ilvl) + '\n'
         message += '*Экипированный уровень предметов:* ' + str(eq_ilvl) + '\n'
         message += '*Предметы:*' + '\n'
